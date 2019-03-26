@@ -27,25 +27,3 @@
 /// THE SOFTWARE.
 
 import UIKit
-
-class TipCalculatorViewController: UIViewController {
-
-    @IBOutlet weak var billAmountTextField: UITextField!
-    @IBOutlet weak var totalBillLabel: UILabel!
-    @IBOutlet weak var tipSlider: UISlider!
-    private var billAmount: Float?
-    private var tipAmountAsDecimal: Float?
-    private var totalBillAmount: Float?
-
-    @IBAction func billAmountChanged(_ sender: Any) {
-
-    }
-    private func updateTotalAmount() {
-        guard let billAmount = billAmount,
-            let tipAmountAsDecimal = tipAmountAsDecimal else {
-                totalBillAmount = nil
-                return
-        }
-        totalBillAmount = billAmount + (billAmount * tipAmountAsDecimal)
-    }
-}
